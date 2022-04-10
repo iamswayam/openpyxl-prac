@@ -15,58 +15,65 @@ user1 = {'fName': 'Swayam',
          'designation': 'Python Developer'
          }
 
-# user2 = {'fName': 'Avinash', 
-#          'lName': 'Sahoo', 
-#          'age': 25, 
-#          'accNo': 4545623410, 
-#          'ifscCode': 'PBKK4312424',
-#          'pin': 500012,
-#          'city': 'Hyderbad',
-#          'isActive': True,
-#          'designation': 'Software Tester'
-#          }
+user2 = {'fName': 'Avinash', 
+         'lName': 'Sahoo', 
+         'age': 25, 
+         'accNo': 4545623410, 
+         'ifscCode': 'PBKK4312424',
+         'pin': 500012,
+         'city': 'Hyderbad',
+         'isActive': True,
+         'designation': 'Software Tester'
+         }
 
-# user3 = {'fName': 'Rajeev', 
-#          'lName': 'Shukla', 
-#          'age': 28, 
-#          'accNo': 4100245679, 
-#          'ifscCode': 'SBIN454560',
-#          'pin': 600071,
-#          'city': 'Chandigarh',
-#          'isActive': True,
-#          'designation': 'Data Scientiest'
-#          }
+user3 = {'fName': 'Rajeev', 
+         'lName': 'Shukla', 
+         'age': 28, 
+         'accNo': 4100245679, 
+         'ifscCode': 'SBIN454560',
+         'pin': 600071,
+         'city': 'Chandigarh',
+         'isActive': True,
+         'designation': 'Data Scientiest'
+         }
 
-# headers = [
-#             "Last Name",
-#             "First Name",
-#             "Role",
-#             "Primary Program",
-#             "Home Institution",
-#         ]
+users = [user1, user2, user3]
 
-col = []
-row = []
+rows = []
 
-for key, value in user1.items():
-    col.append(key)
-    row.append(value)
-
-sheet.append(col)
-sheet.append(row)
-# for row in rows:
-#     sheet.append([row])
-
-tab = Table(displayName="Table1", ref="A1:E5")
-
-style = TableStyleInfo(name="TableStyleMedium9", showFirstColumn=False,
-                       showLastColumn=False, showRowStripes=True, showColumnStripes=True)
-tab.tableStyleInfo = style
-
-sheet.add_table(tab)
+sheet.append(['First Name', 'Last Name', 'Age', 'Acc No', 'IFSC Code', 'Pin', 'City', 'Active', 'Designation'])
+for user in users:
+    user_l = list(user.values())
+    rows.append(user_l)
+    # print(row)
+for row in rows:
+    sheet.append(row)
+    # print("New L:",r)
 wb.save("table.xlsx")
 
 
+
+
+
+    # for key, value in user.items():
+    #     row.append(value)
+    
+# for i in users:
+#     l = list(i.values())
+#     print(l)
+
+# sheet.append(row)
+# wb.save("table.xlsx")
+
+# tab = Table(displayName="Table1", ref="A1:E5")
+
+# style = TableStyleInfo(name="TableStyleMedium9", showFirstColumn=False,
+#                        showLastColumn=False, showRowStripes=True, showColumnStripes=True)
+# tab.tableStyleInfo = style
+
+
+
+# ------- END ---------#
 
 
 
